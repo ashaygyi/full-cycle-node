@@ -1,0 +1,21 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "helmet": "^3.15.1",
+    "http-errors": "^1.7.2",
+    "mongoose": "^5.4.16",
+    "morgan": "^1.9.1"
+  }
+}
