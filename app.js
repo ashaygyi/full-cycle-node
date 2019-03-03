@@ -5,6 +5,7 @@ const path = require('path');
 const logger = require('morgan');
 const helmet = require('helmet');
 const compression = require('compression');
+const createError = require('http-errors');
 
 var app = express();
 var port = 3000;
@@ -40,6 +41,14 @@ app.use('/users', usersRouter);
 app.use('/catalog', catalogRouter); 
 
 //errors
+app.use(function(req, res, next){
+    next(createError(404));
+});
+
+app.use(function(err, req, res, next){
+    res.status(err.status || 500);
+    res.send('error');
+})
 
 // app.get('/', (req, res)=> {
 //     res.send("Hello world");
