@@ -1,5 +1,9 @@
 const Book = require('../models/book');
 
+exports.index = function(res, res){
+    res.send('');
+}
+
 //post C
 exports.book_create_post = function(req, res){
     res.send('');
