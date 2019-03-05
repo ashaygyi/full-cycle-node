@@ -1,12 +1,12 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');//access body
+const cookieParser = require('cookie-parser');//access cookie
 const ejs = require('ejs');
 const path = require('path');
-const logger = require('morgan');
-const helmet = require('helmet');
-const compression = require('compression');
-const createError = require('http-errors');
+const logger = require('morgan');//log info
+const helmet = require('helmet');//set HTTP header for security
+const compression = require('compression');// compress router
+const createError = require('http-errors');// express error handling
 
 var app = express();
 var port = 3000;
@@ -17,9 +17,7 @@ const viewPath = path.join(__dirname, 'views');
 const db = ('./db/moongoose');
 
 //routes
-const indexRouter = require('./routes/index');
-const catalogRouter = require('./routes/catalog');
-const usersRouter = require('./routes/users');
+const indexRouter = require('./routes/route');
 
 //view engine
 app.set('view', viewPath);
@@ -38,8 +36,6 @@ app.use(compression());
 app.use(express.static(publicPath));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/catalog', catalogRouter); 
 
 //errors
 app.use(function(req, res, next){
